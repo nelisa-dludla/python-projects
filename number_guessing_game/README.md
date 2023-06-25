@@ -15,7 +15,7 @@ Welcome to the Number Guessing Game! This simple yet exciting game challenges yo
 To get started with the Number Guessing Game, follow these steps:
 
 1. Clone this repository: `git clone https://github.com/nelisa-dludla/python-projects.git`
-2. Navigate to the project directory: `cd number_guessing-game`
+2. Navigate to the project directory: `cd number_guessing_game`
 3. Run the game script: `python number_guessing_game.py`
 4. Follow the on-screen instructions and start guessing!
 
@@ -34,4 +34,4 @@ Contributions are welcome! If you have any suggestions, bug reports, or feature 
 
 This project is licensed under the [MIT License](LICENSE).
 
-Let the guessing begin! Have fun playing the Guessing Game!
+Let the guessing begin! Have fun playing the Number Guessing Game!
