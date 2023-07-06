@@ -6,6 +6,7 @@ Welcome to my Python Projects repository! This repository is a collection of var
 
 - [Number Guessing Game](./number_guessing_game/README.md)
 - [Rock, Paper, Scissors Game](./rock_paper_scissors/README.md)
+- [Maze Bank CLI](./maze_bank_cli/README.md)
 
 Each project is contained within its own directory with its own README file, providing detailed information about the project, how to run it, and any specific instructions or features.
 
