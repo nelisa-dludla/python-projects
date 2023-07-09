@@ -1,2 +1,3 @@
 firstName,lastName,accountType,accountNumber,accountBalance
 John,Doe,savings,1234567890,1000.00
+Jane,Doe,cheque,0987654321,5000.00

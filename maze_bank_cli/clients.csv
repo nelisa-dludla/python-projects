@@ -1,2 +1,3 @@
 firstName,lastName,phoneNumber,email,accountType,accountNumber,username,password
 John,Doe,1234567890,john.doe@outlook.com,savings,1234567890,john_doe,password
+Jane,Doe,0987654321,jane.doe@gmail.com,cheque,0987654321,janedoe,qwerty
