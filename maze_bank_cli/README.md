@@ -1,6 +1,6 @@
-# Maze Bank CLI
+# Maze Bank CLI Application
 
-Welcome to Maze Bank CLI! This command-line program allows users to log in to their Maze Bank account, view their account details, perform transactions such as deposits, transfers, and withdrawals, and manage their finances effectively.
+Welcome to Maze Bank CLI Application! This command-line program allows users to log in to their Maze Bank account, view their account details, perform transactions such as deposits, transfers, and withdrawals, and manage their finances effectively.
 
 **Note: This program is currently a work in progress.**
 
@@ -17,8 +17,8 @@ Welcome to Maze Bank CLI! This command-line program allows users to log in to th
 To get started with Maze Bank CLI, follow these steps:
 
 1. Clone this repository: `git clone https://github.com/nelisa-dludla/python-projects.git`
-2. Navigate to the project directory: `cd maze_bank_cli`
-3. Run the program: `python maze_bank_cli.py`
+2. Navigate to the project directory: `cd maze_bank_cli_app`
+3. Run the program: `python maze_bank_cli_app.py`
 4. Follow the on-screen instructions to log in or sign up and perform various account operations.
 
 ## How to Use
@@ -36,6 +36,7 @@ To get started with Maze Bank CLI, follow these steps:
      - 'd': Deposit funds into your account.
      - 't': Transfer funds to another account.
      - 'w': Withdraw funds from your account.
+     - 'q': Log out and exit the application.
 
 3. Deposit:
    - Select the 'd' option on the account page.
@@ -53,6 +54,11 @@ To get started with Maze Bank CLI, follow these steps:
    - Enter the amount you want to withdraw when prompted.
    - The specified amount will be deducted from your account balance.
 
+6. Logout and Exit:
+
+   - To log out and exit the Maze Bank CLI application, select the 'q' option on the account page.
+   - You will be safely logged out, and the application will be closed.
+
 ## Contributing
 
 Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request.
@@ -61,6 +67,6 @@ Contributions are welcome! If you have any suggestions, bug reports, or feature 
 
 This project is licensed under the [MIT License](LICENSE).
 
-Start managing your Maze Bank account efficiently with Maze Bank Account Management. Enjoy secure and convenient banking services!
+Start managing your Maze Bank account efficiently with Maze Bank CLI Application. Enjoy secure and convenient banking services!
 
-**Note**: This program is still a work in progress. You can log in with the provided dummy account: username - john_doe, password - password.
+**Note**: This program is still a work in progress. You can log in with the provided dummy accounts: username - john_doe, password - password | username - janedoe, password - qwerty.
