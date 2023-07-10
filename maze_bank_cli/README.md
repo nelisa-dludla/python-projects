@@ -2,8 +2,6 @@
 
 Welcome to Maze Bank CLI Application! This command-line program allows users to log in to their Maze Bank account, view their account details, perform transactions such as deposits, transfers, and withdrawals, and manage their finances effectively.
 
-**Note: This program is currently a work in progress.**
-
 ## Features
 
 - User authentication: Log in to an existing account or sign up for a new account
@@ -59,6 +57,16 @@ To get started with Maze Bank CLI, follow these steps:
    - To log out and exit the Maze Bank CLI application, select the 'q' option on the account page.
    - You will be safely logged out, and the application will be closed.
 
+## Default and Stock Accounts
+
+Maze Bank CLI Application provides default and stock accounts that users can use to log in and perform transactions. If you don't have an existing account, you can use one of the following credentials:
+
+- **Username**: michaeld, **Password**: michael
+- **Username**: franklinc, **Password**: franklin
+- **Username**: trevorp, **Password**: trevor
+
+Please note that these accounts are provided for demonstration purposes only. It's recommended to sign up for your own account to ensure the security of your personal information and transactions.
+
 ## Contributing
 
 Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request.
@@ -68,5 +76,3 @@ Contributions are welcome! If you have any suggestions, bug reports, or feature 
 This project is licensed under the [MIT License](LICENSE).
 
 Start managing your Maze Bank account efficiently with Maze Bank CLI Application. Enjoy secure and convenient banking services!
-
-**Note**: This program is still a work in progress. You can log in with the provided dummy accounts: username - john_doe, password - password | username - janedoe, password - qwerty.
