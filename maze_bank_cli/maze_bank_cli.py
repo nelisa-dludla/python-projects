@@ -36,8 +36,8 @@ def login():
         valid_account = find_client_logins("clients.csv", username, password)
         # print(f"Both username and password are valid: {valid_account}")
         if valid_account:
-            value = get_value_from_csv("clients.csv", "username", username, "accountNumber")
-            account_page(value)
+            account_number = get_value_from_csv("clients.csv", "username", username, "accountNumber")
+            account_page(account_number)
 
 # For when user selects sign in option
 def signup():
@@ -122,18 +122,22 @@ def find_client_logins(file_name, username, password):
         for row in csv_reader:
             if row["username"] == username:
                 valid_username = True
-            else:
-                print("Incorrect Username or Username does not exist")
 
             if row["password"] == password:
                 valid_password = True
-            else:
-                print("Incorrect Password")
 
-        if valid_username and valid_password:
-            return True
-        else:
+    if valid_username and valid_password:
+        return True
+    elif not valid_username and valid_password:
+            print("Incorrect Username or Username does not exist.")
             return False
+    elif valid_username and not valid_password:
+            print("Incorrect Password.")
+            return False
+    else:
+        print("Incorrect Username or Username does not exist.")
+        print("Incorrect Password")
+        return False
 
 # Displays client account page
 def account_page(value):
