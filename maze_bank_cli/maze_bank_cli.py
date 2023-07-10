@@ -176,6 +176,9 @@ Current Balance: {account_balance}
                 sys.exit("Logging Out...")
             else:
                 withdraw(account_number)
+        # User enters a character not in user_options
+        else:
+            print("Invalid Input.")
 
 # Displays deposit page and processes the accountBalance change
 def deposit(account_number):
@@ -191,7 +194,7 @@ def deposit(account_number):
             value = get_value_from_csv("accounts.csv", "accountNumber", account_number, "accountBalance")
             new_amount = float(value) + amount
             formatted_new_amount = format(new_amount, ".2f")
-            change_value_in_csv("accounts.csv", "accountBalance", str(value), formatted_new_amount)
+            change_value_in_csv("accounts.csv", "accountNumber", account_number, "accountBalance", formatted_new_amount)
             print(f"{formatted_amount} has been deposited into your account.")
             break
 
@@ -218,16 +221,18 @@ def transfer(account_number):
                         # Find value of accountBalance for sender
                         sender_balance = get_value_from_csv("accounts.csv", "accountNumber", account_number, "accountBalance")
                         new_sender_balance = float(sender_balance) - float(formatted_transfer_amount)
+                        new_sender_balance = format(new_sender_balance, ".2f")
                         # Check if sender has enough funds for transaction of requested amount
-                        if new_sender_balance < 0:
+                        if float(new_sender_balance) < 0:
                             print("Insufficient funds. Transaction Cancelled.")
                             break
                         # Change value of accountBalance for sender
-                        change_value_in_csv("accounts.csv", "accountBalance", str(sender_balance), format(new_sender_balance, ".2f"))
+                        change_value_in_csv("accounts.csv", "accountNumber", account_number, "accountBalance", new_sender_balance)
                         # Find and change value of accountBalance for recipient
                         recipient_balance = get_value_from_csv("accounts.csv", "accountNumber", str(recipients_account), "accountBalance")
                         new_recipient_balance = float(recipient_balance) + float(formatted_transfer_amount)
-                        change_value_in_csv("accounts.csv", "accountBalance", str(recipient_balance), format(new_recipient_balance, ".2f"))
+                        new_recipient_balance = format(new_recipient_balance, ".2f")
+                        change_value_in_csv("accounts.csv", "accountNumber", str(recipients_account), "accountBalance", new_recipient_balance)
                         is_completed = True
                         # Print success message
                         print("Transaction successful.")
@@ -269,7 +274,7 @@ def withdraw(account_number):
                 # Format new amount to 2 decimal places
                 formatted_new_amount = format(new_value, ".2f")
                 # Change accountBalance to new amount
-                change_value_in_csv("accounts.csv", "accountBalance", str(value), formatted_new_amount)
+                change_value_in_csv("accounts.csv", "accountNumber", account_number, "accountBalance", formatted_new_amount)
                 print(f"{formatted_amount} has been withdrawn from your account.")
             break
 
@@ -279,7 +284,7 @@ def generate_account_number():
     return account_number
 
 # Function changes the value inside a csv file
-def change_value_in_csv(filename, column_name, target_value, new_value):
+def change_value_in_csv(filename, condition_column, condition_value, target_column_name, new_value):
     rows = []
     # Open csv file and read its contents
     with open(filename, "r") as csvfile:
@@ -289,12 +294,13 @@ def change_value_in_csv(filename, column_name, target_value, new_value):
         # Copy contents inside csv to a list
         for row in csv_reader:
             rows.append(row)
-    # Get index of relevant column to find the value
-    column_index = header.index(column_name)
+    # Get index of relevant columns to find the value
+    condition_column_index = header.index(condition_column)
+    target_column_index = header.index(target_column_name)
     # Find value inside list and change it
     for row in rows:
-        if row[column_index] == target_value:
-            row[column_index] = new_value
+        if row[condition_column_index] == condition_value:
+            row[target_column_index] = new_value
     # Open csv file and write contents from list into the csv file
     with open(filename, "w", newline="") as csvfile:
         csv_writer = csv.writer(csvfile)
