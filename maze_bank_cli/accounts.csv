@@ -1,3 +1,4 @@
 firstName,lastName,accountType,accountNumber,accountBalance
-John,Doe,savings,1234567890,1000.00
-Jane,Doe,cheque,0987654321,5000.00
+Michael,De Santa,cheque,1234567890,7000.00
+Franklin,Clinton,cheque,9876543210,300.00
+Trevor,Philips,savings,2468101214,108000.00
